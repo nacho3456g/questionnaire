@@ -3,7 +3,13 @@ if (localStorage.getItem(`questionnaire`) !== null) {
     theContainer.style.display = `block`;
     theContainer.innerHTML = localStorage.getItem(`questionnaire`);
 };
-    document.getElementById(`generator`).addEventListener(`click`, function () {
+let theGenerator = document.getElementById(`generator`);
+let newResultBox = document.getElementById(`newResult`);
+    theGenerator.addEventListener(`click`, function () {
+        newResultBox.style.display = `flex`;
+        setTimeout(_ => {
+            newResultBox.style.display = `none`;
+        }, 1000);
         theContainer.style.display = `block`;
         let a = 0;
         let wealth = Math.ceil(Math.random() * 2);
