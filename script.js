@@ -9,6 +9,7 @@ if (localStorage.getItem(`questionnaire`) !== null) {
         let wealth = Math.ceil(Math.random() * 2);
         let uponChoice1 = Math.ceil(Math.random() * 2);
         let uponChoice2 = Math.ceil(Math.random() * 2);
+        let recycle = Math.ceil(Math.random() * 2);
         theContainer.innerHTML = `
             <!--1--> <div>${++a} => 2</div>
             <!--2--> <div>${++a} => ${Math.round(Math.random() * 35) + 25}</div>
@@ -23,9 +24,9 @@ if (localStorage.getItem(`questionnaire`) !== null) {
             <!--11--> <div>${++a} => 1</div>
             <!--12--> <div>${++a} => 1</div>
             <!--13--> <div>${++a} => 1</div>
-            <!--14--> <div>${++a} => 1</div>
+            <!--14--> <div>${++a} => ${recycle}</div>
             <!--15--> <div>${++a} => ${wealth}</div>
-            <!--16--> <div>${++a} => 1</div>
+            <!--16--> ${recycle === 1 ? `<div>${++a} => 1</div>` : `<div>${++a} => 2</div>`}
             <!--17--> <div>${++a} => ${Math.ceil(Math.random() * 2)}</div>
             <!--18--> <div>${++a} => 1</div>
             <!--19--> <div>${++a} => 1</div>
