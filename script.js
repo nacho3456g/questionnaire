@@ -18,6 +18,7 @@ let newResultBox = document.getElementById(`newResult`);
         let uponChoice1 = Math.ceil(Math.random() * 2);
         let uponChoice2 = Math.ceil(Math.random() * 2);
         let recycle = Math.ceil(Math.random() * 2);
+        let wasteRemoval = Math.ceil(Math.random() * 4);
         theContainer.innerHTML = `
             <!--1--> <div>${++a} => 2</div>
             <!--2--> <div>${++a} => ${age}</div>
@@ -59,8 +60,8 @@ let newResultBox = document.getElementById(`newResult`);
             <!--38--> <div>${++a} => ${Math.ceil(Math.random() * 2)}</div>
             <!--39--> <div>${++a} => 1</div>
             <!--40--> <div>${++a} => ${[15, 20, 25, 30][Math.round(Math.random() * 3)]}</div>
-            <!--41--> <div>${++a} => ${Math.ceil(Math.random() * 4)}</div>
-            <!--42--> <div>${++a} => ${Math.ceil(Math.random() * 5)}</div>
+            <!--41--> <div>${++a} => ${wasteRemoval}</div>
+            <!--42--> <div>${++a} => ${wasteRemoval === 1 ? Math.ceil(Math.random() * 2) : wasteRemoval === 2 ? Math.round(Math.random()) + 2 : Math.round(Math.random() * 2) + 3}</div>
         `;
         a = 0;
         localStorage.setItem(`questionnaire`, theContainer.innerHTML);
