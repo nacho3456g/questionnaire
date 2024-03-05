@@ -23,7 +23,7 @@ let newResultBox = document.getElementById(`newResult`);
             <!--2--> <div>${++a} => ${age}</div>
             <!--3--> <div>${++a} => ${Math.ceil(Math.random() * 2)}</div>
             <!--4--> <div>${++a} => ${[1, 1, 1, 1, 1, 1, 2, 1, 1][Math.round(Math.random() * 8)]}</div>
-            <!--5--> ${age > 30 ? `<div>${++a} => ${[2, 2, 2, 3, 4][Math.round(Math.random() * 4)]}</div>` : `<div>${++a} => ${[2, 2, 2, 1, 1, 3][Math.round(Math.random() * 5)]}</div>`}
+            <!--5--> ${age > 30 ? `<div>${++a} => ${[2, 2, 2, 3, 4, 2, 2, 2, 2][Math.round(Math.random() * 8)]}</div>` : `<div>${++a} => ${[2, 2, 2, 1, 1, 3, 2, 2, 2, 2][Math.round(Math.random() * 9)]}</div>`}
             <!--6--> <div>${++a} => ${Math.ceil(Math.random() * 4)}</div>
             <!--7--> <div>${++a} => ${Math.ceil(Math.random() * 4)}</div>
             <!--8--> <div>${++a} => ${Math.ceil(Math.random() * 3)}</div>
