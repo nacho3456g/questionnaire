@@ -58,7 +58,7 @@ let newResultBox = document.getElementById(`newResult`);
             <!--37--> <div>${++a} => ${Math.ceil(Math.random() * 3)}</div>
             <!--38--> <div>${++a} => ${Math.ceil(Math.random() * 2)}</div>
             <!--39--> <div>${++a} => 1</div>
-            <!--40--> <div>${++a} => ${[15, 20, 25, 30, ``][Math.round(Math.random() * 4)]}</div>
+            <!--40--> <div>${++a} => ${[15, 20, 25, 30][Math.round(Math.random() * 3)]}</div>
             <!--41--> <div>${++a} => ${Math.ceil(Math.random() * 4)}</div>
             <!--42--> <div>${++a} => ${Math.ceil(Math.random() * 5)}</div>
         `;
