@@ -27,7 +27,7 @@ if (localStorage.getItem(`questionnaire`) !== null) {
             copyAll = localStorage.getItem(`serial`) + copyAll.slice(3);
         }
         showResultDiv.style.display = `block`;
-        showResultDiv.innerHTML = `<pre>${copyAll}</pre>`;
+        showResultDiv.innerHTML = `<input value="${copyAll}" readonly>`;
     });
 };
 let theGenerator = document.getElementById(`generator`);
@@ -50,7 +50,7 @@ theGenerator.addEventListener(`click`, function () {
             <div><div id="serialNumber">${localStorage.getItem(`serial`) || `Serial`}</div></div>
             <div><p>If your serial Number is already inserted, you don't have to insert it again!</p></div>
             <div class="copy-questionnaire" id="copy"><input type="number" id="serial" placeholder="Serial" title="If your serial Number is already inserted, you don't have to insert it again!"><div id="copyButton">Show Final Result</div></div>
-            <div id="showResult" contenteditable></div>
+            <div id="showResult"></div>
             <!--1--> <div>${++a} => <span>2</span></div>
             <!--2--> <div>${++a} => <span>${age}</span></div>
             <!--3--> <div>${++a} => <span>${Math.ceil(Math.random() * 2)}</span></div>
@@ -116,7 +116,7 @@ theGenerator.addEventListener(`click`, function () {
                 copyAll = localStorage.getItem(`serial`) + copyAll.slice(3);
             }
             showResultDiv.style.display = `block`;
-            showResultDiv.innerHTML = `<pre>${copyAll}</pre>`;
+            showResultDiv.innerHTML = `<input value="${copyAll}" readonly>`;
         });
     a = 0;
     localStorage.setItem(`questionnaire`, theContainer.innerHTML);
