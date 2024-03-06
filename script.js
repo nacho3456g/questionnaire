@@ -1,4 +1,3 @@
-location.replace(`https://nacho3456g.github.io/questionnaire/`);
 let theContainer = document.getElementById(`container`);
 if (localStorage.getItem(`questionnaire`) !== null) {
     theContainer.style.display = `block`;
