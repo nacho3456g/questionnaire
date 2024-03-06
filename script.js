@@ -2,8 +2,8 @@ let theContainer = document.getElementById(`container`);
 if (localStorage.getItem(`questionnaire`) !== null) {
     theContainer.style.display = `block`;
     theContainer.innerHTML = localStorage.getItem(`questionnaire`);
+    let serialNumber = document.getElementById(`serialNumber`);
     if (localStorage.getItem(`serial`) !== null) {
-        let serialNumber = document.getElementById(`serialNumber`);
         serialNumber.innerHTML = localStorage.getItem(`serial`);
     }
     let serial = document.getElementById(`serial`);
