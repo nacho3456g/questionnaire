@@ -28,6 +28,11 @@ if (localStorage.getItem(`questionnaire`) !== null) {
         }
         showResultDiv.style.display = `block`;
         showResultDiv.innerHTML = `<input value="${copyAll}" readonly>`;
+        if (document.querySelector(`div.container div#showResult input`)) {
+            document.querySelector(`div.container div#showResult input`).addEventListener(`click`, function () {
+                this.select();
+            });
+        };
     });
 };
 let theGenerator = document.getElementById(`generator`);
@@ -94,30 +99,36 @@ theGenerator.addEventListener(`click`, function () {
             <!--41--> <div>${++a} => <span>${wasteRemoval}</span></div>
             <!--42--> <div>${++a} => <span>${wasteRemoval === 1 ? Math.ceil(Math.random() * 2) : wasteRemoval === 2 ? Math.round(Math.random()) + 2 : Math.round(Math.random() * 2) + 3}</span></div>
         `;
-        let allResults = [...document.querySelectorAll(`div.container div span`)];
-        let copyAll = allResults.reduce((accum, currEle) => {
-            return accum + `${currEle.innerHTML}\t`;
-        }, ``).trim();
-        let serial = document.getElementById(`serial`);
-        let serialNumber = document.getElementById(`serialNumber`);
-        serial.addEventListener(`blur`, function () {
-            if (serial.value.length === 3) {
-                localStorage.setItem(`serial`, serial.value);
-                serialNumber.innerHTML = localStorage.getItem(`serial`);
-            }
-        });
-        let showResultDiv = document.getElementById(`showResult`);
-        let copyButton = document.getElementById(`copyButton`);
-        copyButton.addEventListener(`click`, function () {
-            if (/^\d{1}\t/.test(copyAll)) {
-                copyAll = localStorage.getItem(`serial`) + `\t` + copyAll;
-            }
-            if (/^\d{3}\t\d{1}/.test(copyAll)) {
-                copyAll = localStorage.getItem(`serial`) + copyAll.slice(3);
-            }
-            showResultDiv.style.display = `block`;
-            showResultDiv.innerHTML = `<input value="${copyAll}" readonly>`;
-        });
+    let allResults = [...document.querySelectorAll(`div.container div span`)];
+    let copyAll = allResults.reduce((accum, currEle) => {
+        return accum + `${currEle.innerHTML}\t`;
+    }, ``).trim();
+    let serial = document.getElementById(`serial`);
+    let serialNumber = document.getElementById(`serialNumber`);
+    serial.addEventListener(`blur`, function () {
+        if (serial.value.length === 3) {
+            localStorage.setItem(`serial`, serial.value);
+            serialNumber.innerHTML = localStorage.getItem(`serial`);
+        }
+    });
+    let showResultDiv = document.getElementById(`showResult`);
+    let copyButton = document.getElementById(`copyButton`);
+    copyButton.addEventListener(`click`, function () {
+        if (/^\d{1}\t/.test(copyAll)) {
+            copyAll = localStorage.getItem(`serial`) + `\t` + copyAll;
+        }
+        if (/^\d{3}\t\d{1}/.test(copyAll)) {
+            copyAll = localStorage.getItem(`serial`) + copyAll.slice(3);
+        }
+        showResultDiv.style.display = `block`;
+        showResultDiv.innerHTML = `<input value="${copyAll}" readonly>`;
+        if (document.querySelector(`div.container div#showResult input`)) {
+            document.querySelector(`div.container div#showResult input`).addEventListener(`click`, function () {
+                this.select();
+            });
+        };
+    });
     a = 0;
     localStorage.setItem(`questionnaire`, theContainer.innerHTML);
 });
+
