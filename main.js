@@ -29,7 +29,7 @@ if (localStorage.getItem(`questionnaire`) !== null) {
         showResultDiv.style.display = `block`;
         showResultDiv.innerHTML = `<input value="${copyAll}" readonly>`;
         if (document.querySelector(`div.container div#showResult input`)) {
-            document.querySelector(`div.container div#showResult input`).addEventListener(`click`, function () {
+            document.querySelector(`div.container div#showResult input`).addEventListener(`select`, function () {
                 this.select();
             });
         };
@@ -123,7 +123,7 @@ theGenerator.addEventListener(`click`, function () {
         showResultDiv.style.display = `block`;
         showResultDiv.innerHTML = `<input value="${copyAll}" readonly>`;
         if (document.querySelector(`div.container div#showResult input`)) {
-            document.querySelector(`div.container div#showResult input`).addEventListener(`click`, function () {
+            document.querySelector(`div.container div#showResult input`).addEventListener(`select`, function () {
                 this.select();
             });
         };
