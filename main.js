@@ -131,5 +131,3 @@ theGenerator.addEventListener(`click`, function () {
     a = 0;
     localStorage.setItem(`questionnaire`, theContainer.innerHTML);
 });
-let d = new Date();
-console.log(d);
